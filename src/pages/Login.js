@@ -20,7 +20,7 @@ class Login extends React.Component {
     }), () => {
       const { email, password } = this.state;
       const emailVal = email.includes('@');
-      const emailCom = email.includes('.com');
+      const emailCom = email.endsWith('.com');
       const minLength = 6;
       if (emailVal && emailCom && password.length >= minLength) {
         this.setState({
@@ -34,7 +34,8 @@ class Login extends React.Component {
     });
   }
 
-  changePage = () => {
+  changePage = (event) => {
+    event.preventDefault();
     const { history, emailLoginDispatch } = this.props;
     const { email } = this.state;
     emailLoginDispatch(email);
