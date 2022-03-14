@@ -28,7 +28,7 @@ class Header extends Component {
           <h3 data-testid="total-field" id="expenses">
             { currencies.length === 0
               ? '0,00'
-              : this.sunExpenses() }
+              : this.sunExpenses().toFixed(2) }
           </h3>
         </label>
         <h3 data-testid="header-currency-field">
