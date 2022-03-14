@@ -6,14 +6,14 @@ import { setWallet } from '../actions';
 class Table extends Component {
   // https://pt-br.reactjs.org/docs/thinking-in-react.html#step-1-break-the-ui-into-a-component-hierarchy
   // https://developer.mozilla.org/pt-BR/docs/Learn/HTML/Tables/Basics
-  removeExpenses = () => {
-    const { expenses, walletUpdate } = this.props;
-    this.setState({
-      id: expenses.id - 1,
+  // removeExpenses = () => {
+  //   const { expenses, walletUpdate } = this.props;
+  //   this.setState({
+  //     id: expenses.id - 1,
 
-    });
-    walletUpdate(this.state.id);
-  }
+  //   });
+  //   walletUpdate(this.state.id);
+  // }
 
   render() {
     const { expenses } = this.props;
@@ -76,6 +76,7 @@ class Table extends Component {
 
 Table.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
+  // walletUpdate: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
